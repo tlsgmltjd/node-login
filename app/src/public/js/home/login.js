@@ -19,7 +19,16 @@ const login = (e) => {
     body: JSON.stringify(req),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    .then((res) => {
+      if (res.success) {
+        location.href = "/";
+      } else {
+        alert(res.messege);
+      }
+    })
+    .catch((error) => {
+      console.error(new Error("[ 에러발생 ]"));
+    });
 };
 
 loginBtn.addEventListener("click", login);
