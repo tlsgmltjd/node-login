@@ -29,6 +29,9 @@ const login = (e) => {
     .catch((error) => {
       console.error(new Error("[ 에러발생 ]"));
     });
+
+  id.value = "";
+  password.value = "";
 };
 
 loginBtn.addEventListener("click", login);
